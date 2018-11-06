@@ -1,4 +1,7 @@
 .vs
 .vssettings
 .atsuo
+.vs/
+Debug/
+.componentinfo
 
