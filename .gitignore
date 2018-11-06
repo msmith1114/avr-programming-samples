@@ -3,5 +3,6 @@
 .atsuo
 .vs/
 Debug/
-.componentinfo
+.xml
+Profiles/
 
