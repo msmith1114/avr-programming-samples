@@ -1,6 +1,7 @@
 *.vs
 *.vssettings
 *.atsuo
+*.atsln
 .vs/
 Debug/
 Profiles/
