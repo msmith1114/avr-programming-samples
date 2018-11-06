@@ -1,9 +1,7 @@
-.vs
-.vssettings
-.atsuo
+*.vs
+*.vssettings
+*.atsuo
 .vs/
 Debug/
-.xml
 Profiles/
-
 *.xml
