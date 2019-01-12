@@ -17,11 +17,16 @@
 
 
 
+float fahrenheitConvert(uint16_t celsius) {
+	return celsius * (9 / 5.0) + 32;
+}
+
 int main(void)
 {
 	uint8_t UpperByte, LowerByte;
 	uint16_t Temperature;
-	clock_prescale_set(clock_div_1);                             /* 8MHz */
+	float Fahrenheit;
+	clock_prescale_set(clock_div_1);     /* 8MHz */
 	initUSART();
 	printString("I2C Starting\r\n"); 
 	_delay_ms(20000); 
@@ -47,6 +52,7 @@ int main(void)
 			Temperature = 256 - (UpperByte * 16 + LowerByte / 16);
 		}else //TA 0°C
 		Temperature = (UpperByte * 16 + LowerByte / 16);
+		Fahrenheit = fahrenheitConvert(Temperature);
 		//Temperature = Ambient Temperature (°C)
 		printString("Upper: "); 
 		printByte(UpperByte);
@@ -54,7 +60,10 @@ int main(void)
 		printString("Lower: "); 
 		printByte(LowerByte);
 		printString("\r\n"); 
-		printString("Temp Celsius: "); 
+		printString("Temp Farenheit: "); 
+		printWord(Fahrenheit);
+		printString("\r\n"); 
+		printString("Temp Celsius: ");
 		printWord(Temperature);
 		printString("\r\n"); 
 		_delay_ms(20000); 
@@ -62,4 +71,6 @@ int main(void)
 		
     }
 }
+
+
 
