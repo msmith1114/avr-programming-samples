@@ -100,9 +100,12 @@ void toggleEnable(void);
 void putChar(char c);
 void writeString(char *s);
 void lcdInstruction(uint8_t cmd);
+void setDDRAMAddress(uint8_t add);
+void writeCustomChar(uint8_t charArr[],uint8_t loc);
 
 // Helper Functions
 void lcd_clear(void);
 void lcd_home(void);
 void lcd_cursor_right(void);
 void lcd_cursor_left(void);
+

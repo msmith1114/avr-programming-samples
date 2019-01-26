@@ -47,7 +47,18 @@ void writeString(char *s) {
 	}
 }
 
+void setDDRAMAddress(uint8_t add) {
+	add |= (add << 7);
+	sendNibble(add, INSTRUCTION_REGISTER);
+}
 
+void writeCustomChar(uint8_t charArr[],uint8_t loc) {
+	sendNibble(0x40+(8*loc), INSTRUCTION_REGISTER);
+	for(int i = 0; i < 8; i++){
+		sendNibble(charArr[i],DATA_REGISTER);
+	}
+
+}
 
 
 void initLCD(void) {
