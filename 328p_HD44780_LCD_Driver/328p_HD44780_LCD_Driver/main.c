@@ -129,9 +129,9 @@ int main(void)
 	sendNibble(0x06,DATA_REGISTER);
 	sendNibble(0x07,DATA_REGISTER);
 	/*****************************************/
-	writeString("I love you matt");
+	writeString("This is a test");
 	lcd_home();
-	writeString("Kristin!");
+	writeString("clear test!");
 
 	
     while (1) 
